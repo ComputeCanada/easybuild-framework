@@ -71,6 +71,7 @@ class FlexiBLAS(LinAlg):
     """
     BLAS_MODULE_NAME = ['FlexiBLAS']
     BLAS_LIB = ['flexiblas']
+    BLAS_LIB_MT = ['flexiblas']
     BLAS_INCLUDE_DIR = [os.path.join('include', 'flexiblas')]
     BLAS_FAMILY = TC_CONSTANT_FLEXIBLAS
 
@@ -83,6 +84,7 @@ class FlexiBLAS(LinAlg):
         """Fix the BLAS_LIB for Intel"""
         if self.COMPILER_FAMILY == TC_CONSTANT_INTELCOMP:
             self.BLAS_LIB = ['flexiblas_intel']
+            self.BLAS_LIB_MT = ['flexiblas_intel']
         super(FlexiBLAS, self)._set_blas_variables()
 
     def banned_linked_shared_libs(self):
