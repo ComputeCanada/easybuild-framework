@@ -81,7 +81,7 @@ class FlexiBLAS(LinAlg):
     LAPACK_FAMILY = TC_CONSTANT_FLEXIBLAS
 
     def _set_blas_variables(self):
-        """Fix the BLAS_LIB for Intel"""
+        """Fix the BLAS_LIB and BLAS_LIB_MT for Intel"""
         if self.COMPILER_FAMILY == TC_CONSTANT_INTELCOMP:
             self.BLAS_LIB = ['flexiblas_intel']
             self.BLAS_LIB_MT = ['flexiblas_intel']
