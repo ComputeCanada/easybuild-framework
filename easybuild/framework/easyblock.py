@@ -2928,7 +2928,7 @@ class EasyBlock(object):
             raise EasyBuildError("Path to 'env' command to use in shebang lines does not exist: %s", env_for_shebang)
 
         for lang in ['bash', 'perl', 'python']:
-            shebang_regex = re.compile(r'^#![ ]*.*[/ ]%s.*' % lang)
+            shebang_regex = re.compile(r'^#![ ]*.*[/ ]%s' % lang)
             fix_shebang_for = self.cfg['fix_%s_shebang_for' % lang]
             if fix_shebang_for:
                 if isinstance(fix_shebang_for, string_type):
